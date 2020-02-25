@@ -16,10 +16,10 @@ public class ToDo {
     private String uuid;
 
     @Column(name = "title", nullable = false)
-    private final String title;
+    private String title;
 
     @Column(name = "body", nullable = false)
-    private final String body;
+    private String body;
 
     @Column(name = "completed", nullable = false)
     private boolean completed;
@@ -32,6 +32,8 @@ public class ToDo {
 
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
+
+    public ToDo() {}
 
     public ToDo(final Builder builder) {
         this.uuid = builder.uuid;
