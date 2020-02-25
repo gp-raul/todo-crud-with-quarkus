@@ -4,6 +4,7 @@ import br.com.gpraul.dto.ToDoDto;
 import br.com.gpraul.dto.ToDoMapper;
 import br.com.gpraul.model.ToDo;
 import br.com.gpraul.service.CreateToDoUserCase;
+import br.com.gpraul.service.DeleteToDoUserCase;
 import br.com.gpraul.service.FindAllToDoUserCase;
 
 import javax.inject.Inject;
@@ -21,10 +22,14 @@ public class ToDoController {
 
     private FindAllToDoUserCase findAllToDo;
 
+    private DeleteToDoUserCase deleteToDo;
+
     @Inject
-    public ToDoController(final CreateToDoUserCase createToDo, final FindAllToDoUserCase findAllToDo) {
+    public ToDoController(final CreateToDoUserCase createToDo, final FindAllToDoUserCase findAllToDo,
+                          final DeleteToDoUserCase deleteToDo) {
         this.createToDo = createToDo;
         this.findAllToDo = findAllToDo;
+        this.deleteToDo = deleteToDo;
     }
 
     @POST
@@ -39,5 +44,11 @@ public class ToDoController {
         return findAllToDo.findAll().stream()
                 .map(x -> ToDoMapper.toDto(x))
                 .collect(Collectors.toList());
+    }
+
+    @DELETE
+    @Path("/{uuid}")
+    public void delete(@PathParam("uuid") final String uuid) {
+        deleteToDo.delete(uuid);
     }
 }

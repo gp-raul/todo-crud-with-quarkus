@@ -8,5 +8,7 @@ import javax.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class ToDoRepository implements PanacheRepository<ToDo> {
 
-
+    public void deleteByUuid(final String uuid) {
+        delete("uuid = ?1", uuid);
+    }
 }
