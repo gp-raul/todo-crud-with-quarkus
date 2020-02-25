@@ -124,6 +124,26 @@ public class ToDo {
         return updatedAt;
     }
 
+    public void setUpdatedAt(final LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public void setTitle(final String title) {
+        this.title = title;
+    }
+
+    public void setBody(final String body) {
+        this.body = body;
+    }
+
+    public void setCompleted(final boolean completed) {
+        this.completed = completed;
+    }
+
+    public void setPriority(final Priority priority) {
+        this.priority = priority;
+    }
+
     @Override
     public String toString() {
         return "ToDo{" +

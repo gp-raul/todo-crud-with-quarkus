@@ -11,4 +11,8 @@ public class ToDoRepository implements PanacheRepository<ToDo> {
     public void deleteByUuid(final String uuid) {
         delete("uuid = ?1", uuid);
     }
+
+    public ToDo findOneById(final String uuid) {
+        return find("uuid = ?1", uuid).firstResult();
+    }
 }
