@@ -1,4 +1,4 @@
-package br.com.gpraul;
+package br.com.gpraul.repository;
 
 import br.com.gpraul.model.ToDo;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;

@@ -1,6 +1,6 @@
 package br.com.gpraul.service;
 
-import br.com.gpraul.ToDoRepository;
+import br.com.gpraul.repository.ToDoRepository;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
